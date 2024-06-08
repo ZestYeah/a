@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="freezia Solutions - Engineering Project Assistance and Consulting">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>freezia Solutions</title>
+    <style>
+        /* Additional CSS for responsive design and hamburger menu */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #1c6b78;
+            color: #fccccc;
+            padding: 10px 0;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 27px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 3px 0;
+        }
+
+        #nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        #nav-links li {
+            margin-left: 20px;
+        }
+
+        #nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        #hero {
+            background: #333 url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapertag.com%2Fwallpaper%2Ffull%2Fd%2Fb%2F2%2F125524-cool-electric-background-1920x1200-for-mobile.jpg&f=1&nofb=1&ipt=6c83068ae3744fa4631de656376dd4bf2dfd88f7d2979cd4d7454d6cbff9b972&ipo=images') no-repeat center center/cover;
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        #hero h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        #hero p {
+            font-size: 18px;
+        }
+
+        #hero button {
+            background-color: #ff9900;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        /* Service Section */
+        #services {
+            background-color: #fff;
+            padding: 50px 0;
+        }
+
+        #services h2 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .service-cards {
+           display: flex;
+  		   flex-wrap: wrap;
+  		   justify-content: space-around;
+        }
+
+        .service-cards .card {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            flex-basis: 22%;
+            margin-bottom: 20px;
+        }
+
+        .service-cards .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .service-cards .card h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        /* Project Section */
+        #projects {
+            background-color: #333;
+            color: #fff;
+            padding: 50px 0;
+        }
+
+        #projects h2 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .project-gallery {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .project-gallery .project {
+            flex-basis: 48%;
+            margin-bottom: 20px;
+        }
+
+        .project-gallery .project img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .project-gallery .project h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        /* About Section */
+        #about {
+            background-color: #fff;
+            padding: 50px 0;
+        }
+
+        #about h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #about p.z {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: #f8f8f8;
+            padding: 50px 0;
+        }
+
+        #contact h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #contact form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        #contact form input, #contact form textarea {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-left: 3px;
+        }
+
+        #contact form button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        footer nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .icons-social {
+            padding: 5px;
+            margin-top: 20px;
+        }
+
+        .list-social {
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .icons-social__item {
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        .icons-social__link {
+            cursor: pointer;
+            display: flex;
+            text-decoration: none;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            margin: 0;
+            font-size: 20px;
+            transition: all 0.3s;
+        }
+
+        .icons-social__link:hover {
+            color: #fff;
+            background-color: #636769;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            #nav-links {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                background-color: #333;
+            }
+
+            #nav-links.show {
+                display: flex;
+            }
+
+            #nav-links li {
+                margin: 10px 0;
+            }
+        }
+#projects h3, p{ 
+  margin: 10px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Freezia Solutions</h1>
+            </div>
+            <nav>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <ul id="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Perks</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h1>Your Partner in Engineering Excellence</h1>
+            <p>Expert guidance, innovative solutions, and dedicated support for all your engineering needs.</p>
+            <button>Get Started</button>
+        </div>
+    </section>
+
+    <section id="services" class="container">
+        <h2>Our Services</h2>
+        <div class="service-cards">
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ5UiekEcDKIuzZMaiHqNmX4hu6wvCTdCAkRcmHX55Ov_E11U6F&usqp=CAU" alt="Responsive Site">
+                <h3>Responsive Site</h3>
+                <p>Comprehensive web solutions including responsive design, front-end, and back-end development.</p>
+            </div>
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9rF9rhuW442caJIFuwyaAPVBYnFX3IexLTu_O499g0mDHpzch&usqp=CAU" alt="Idea Completion">
+                <h3>Idea Completion</h3>
+                <p>From logos and graphic design to project ideation and affiliate marketing, we handle all aspects of your creative needs.</p>
+            </div>
+            <div class="card">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.q1oBwmFpNMpIEkZkCyo9cwHaHa%26pid%3DApi&f=1" alt="Industrial Electronics">
+                <h3>Industrial Electronics</h3>
+                <p class='z'>Enterprise-level projects utilizing Arduino, Raspberry Pi, STM32 ARM, and a wide range of sensors.</p>
+            </div>
+            <div class="card">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.pEFwyGXJ_RVXYUFjkEcxDgHaF8%26pid%3DApi&f=1" alt="Game Development">
+                <h3>Game Development</h3>
+                <p class='z'>From art and sprites to audio, 3D models, and crowdfunding support, we offer comprehensive game development services.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <h2>What Makes Us Special</h2>
+        <div class="project-gallery">
+            <div class="project">
+                <!--img src="project1.jpg" alt="AI-centric database project"-->
+                <h3>AI-centric Database</h3>
+                <p>Your personal data remains secure while project information is processed to connect you with the most efficient agent, ensuring optimal project completion.</p>
+            </div>
+            <div class="project">
+                <!--img src="project2.jpg" alt="Flexible Payment Methods"-->
+                <h3>Flexible Payment Methods</h3>
+                <p>We offer flexible payment options tailored to your preferences, prioritizing your satisfaction unlike many other freelance platforms.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <h2>About Us</h2>
+        <p class='z'>freezia Solutions is a team of passionate engineers dedicated to providing top-notch consulting and development services.<br> Our mission is to help you achieve your project goals with innovative solutions and expert support.</p>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="from_name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="from_email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 freezia Solutions. All rights reserved.</p>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Perks</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="icons-social">
+                <ul class="list-social">
+                    <!--li class="icons-social__item"><a class="icons-social__link" href="#"><i class="icons-social__i fab fa-github"></i></a></li-->
+                    <li class="icons-social__item"><a class="icons-social__link" href="#"><i class="icons-social__i fab fa-instagram"></i></a></li>
+                    <li class="icons-social__item"><a class="icons-social__link" href="#"><i class="icons-social__i fab fa-facebook"></i></a></li>
+                    <li class="icons-social__item"><a class="icons-social__link" href="#"><i class="icons-social__i fab fa-twitter"></i></a></li>
+                    <li class="icons-social__item"><a class="icons-social__link" href="#"><i class="icons-social__i fab fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include EmailJS SDK -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("b8a7WhK1kmfb1E-Y4");  // Initialize EmailJS with your public key
+        })();
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent the default form submission
+
+            const serviceID = 'service_chmogqp';
+            const templateID = 'template_4y1qvub';
+
+            emailjs.sendForm(serviceID, templateID, this)  // Send the form data to EmailJS
+                .then(() => {
+                    alert('Message sent successfully!');  // Success message
+                }, (err) => {
+                    alert(JSON.stringify(err));  // Error message
+                });
+        });
+
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
